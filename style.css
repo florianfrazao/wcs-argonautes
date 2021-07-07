@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+header {
+    background: #f4f4f4;
+    text-align: center;
+    padding: 2em;
+}
+
+header img {
+    max-width: 96px;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+h1, h2 {
+    text-align: center;
+    padding: 20px 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.new-member-form {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.new-member-form input {
+    border: 3px solid #dfdfdf;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.new-member-form button {
+    background: #F76C6C;
+    border: 1px solid #F76C6C;
+    border-radius: 5px;
+    font-size: 1em;
+    padding: 5px 15px;
+    cursor: pointer;
+    color: white;
+    margin: 0 5px;
+}
+
+.member-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.member-item {
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    background: #F4F4F4;
+    border-radius: 20px;
+    width:25%;
+}
+
+.material-icons.red { 
+    color: red; 
+    font-size: 32px;
+}
+
+
+footer {
+    margin-top: 2em;
+    text-align: center;
+    color: #fff;
+    background: #f76c6c;
+    padding: 0.25em 0;
+}
