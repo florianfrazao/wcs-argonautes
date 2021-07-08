@@ -2,14 +2,14 @@
 
 // Gestion des erreurs
 if (empty($_POST['name'])) {
-    echo "Vous n'avez pas saisi le nom de l'argonaute !";
+    $error = "Vous n'avez pas saisi le nom de l'argonaute !";
 } else {
 
     // ajout du fichier de connexion à la BDD
     require_once('connect.php');
 
     // Récupération des informations de l'argonaute
-    $name = $_POST['name'];
+    $name = htmlspecialchars($_POST['name']);
 
     // Utilisation de la requete INSERT INTO en SQL
     $query = "INSERT INTO members VALUES (null, '$name')";
@@ -21,7 +21,7 @@ if (empty($_POST['name'])) {
     if ($result) {
         header('Location: index.php');
     } else {
-        echo "erreur";
+        echo "erreur sur le traitement des données";
     }
 
     // Fermeture de la connexion à la base de données

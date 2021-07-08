@@ -23,7 +23,7 @@
     <h2>Ajouter un(e) Argonaute</h2>
     <form class="new-member-form" action="add.php" method="post" enctype="multipart/form-data">
       <label for="name">Nom de l&apos;Argonaute</label>
-      <input id="name" name="name" type="text" placeholder="Nom..." />
+      <input id="name" name="name" type="text" placeholder="Nom..." required />
       <button type="submit">Ajouter</button>
     </form>
 
