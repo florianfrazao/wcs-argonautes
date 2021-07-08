@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,34 +31,38 @@
     <h2>Membres de l'équipage</h2>
     <section class="member-list">
 
-    <?php
-        $connexion = mysqli_connect("localhost", "root", "root");
-        mysqli_set_charset($connexion, "utf8");
-        mysqli_select_db($connexion, "argonautes");
+      <?php
 
-        $query = "SELECT members.id, members.name FROM members";
-        $result = mysqli_query($connexion, $query);
+      // ajout du fichier de connexion à la BDD
+      require_once('connect.php');
 
-        while ($line_result = mysqli_fetch_assoc($result))
-        {
-            $id = $line_result['id'];
-            $name = $line_result['name'];
-    ?>
+      // Requête de sélection des membres en SQL
+      $query = "SELECT members.id, members.name FROM members";
 
-            <!-- Affichage des membres -->
-            <div class="member-item">
-              <h3><?=$name?></h3>
-              <a href="delete.php?id=<?=$id?>">
-                <span class="material-icons red ">remove_circle_outline</span>
-              </a>
-            </div>
-          
-    <?php
-        } // fermeture du while
+      // Envoi de la requête depuis le script actuel vers la base de données, et récupération du résultat de la requête
+      $result = mysqli_query($connexion, $query);
 
-        mysqli_close($connexion);
-    ?>
-    
+      // Association des données aux variables tant qu'il y'a un résultat
+      while ($line_result = mysqli_fetch_assoc($result)) {
+        $id = $line_result['id'];
+        $name = $line_result['name'];
+
+      ?>
+
+        <!-- Affichage des membres -->
+        <div class="member-item">
+          <h3><?= $name ?></h3>
+          <a href="delete.php?id=<?= $id ?>">
+            <span class="material-icons red ">remove_circle_outline</span>
+          </a>
+        </div>
+
+      <?php
+      } // fermeture du while
+
+      mysqli_close($connexion);
+      ?>
+
     </section>
   </main>
 
@@ -66,4 +71,5 @@
   </footer>
 
 </body>
+
 </html>

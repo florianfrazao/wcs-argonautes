@@ -1,13 +1,7 @@
 <?php
 
-    // Connexion au serveur MySQL
-    $connexion = mysqli_connect("localhost", "root", "root");
-
-    // Règle d'encodage
-    mysqli_set_charset($connexion, "utf8");
-
-    // Sélection de la base de données
-    mysqli_select_db($connexion, "argonautes");
+    // ajout du fichier de connexion à la BDD
+    require_once('connect.php');
 
     // Récupération des informations de l'argonaute
     $id = $_GET['id'];
@@ -29,5 +23,3 @@
 
     // Fermeture de la connexion à la base de données
     mysqli_close($connexion);
-
-?>
